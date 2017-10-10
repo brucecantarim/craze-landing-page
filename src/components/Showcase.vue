@@ -1,11 +1,13 @@
 <template lang="pug">
-    .showcase
-        h2 {{ title }}
-        p {{ text }}
-        ul
-            li(v-for="item in list")
-                p {{ item }}
-        video
+  .showcase
+    .about
+      h2 {{ title }}
+      p {{ text }}
+      ul
+        li(v-for="item in list")
+          p {{ item }}
+    video(controls :poster="poster")
+      source(src="#" type="video/webm")
 </template>
 
 <script>
@@ -18,7 +20,8 @@ export default {
       list: {
         item1: 'Lorem ipsum',
         item2: 'Lorem ipsum'
-      }
+      },
+      poster: require('../assets/video.png')
     }
   }
 }
@@ -30,5 +33,27 @@ export default {
   box-sizing: border-box;
   padding: 10vh 20vw;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+}
+
+.about {
+  width: 100%;
+  display: inline-block;
+  padding-right: 5rem;
+}
+
+li {
+  list-style: outside url('../assets/bullet.png');
+}
+
+video {
+  width: 70%;
+  height: auto;
+  display: inline-block;
+  background-color: black;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 </style>

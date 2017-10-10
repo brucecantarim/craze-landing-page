@@ -3,19 +3,22 @@
     hero
     features
     showcase
+    testimonials
 </template>
 
 <script>
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Showcase from './components/Showcase'
+import Testimonials from './components/Testimonials'
 
 export default {
   name: 'app',
   components: {
     Hero,
     Features,
-    Showcase
+    Showcase,
+    Testimonials
   }
 }
 </script>
@@ -23,27 +26,43 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @font-face {
-    font-family: Novecentos;
-    src: ('../assets/novecentos.woff');
+  font-family: Novecentos;
+  src: url('./assets/novecentos.woff2') format('woff2'),
+  url('./assets/novecentos.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
 }
 
 p {
-    font-size: 0.8rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  color: #848484;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+  color: #222222;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #app {
-    font-family: Novecentos, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 </style>

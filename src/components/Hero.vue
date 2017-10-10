@@ -35,9 +35,14 @@ h1 {
   font-size: 4rem;
 }
 
-h1, h2 {
+h2 {
+  font-weight: normal;
+}
+
+h1,
+h2 {
   color: white;
-  text-shadow: 0 0.3rem 0 rgba(0,0,0,0.2);
+  text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.2);
 }
 
 a {
