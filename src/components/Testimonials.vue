@@ -20,12 +20,12 @@ export default {
           name: 'Sarah Hunt'
         },
         testimony2: {
-          quote: 'Craze is one of the most complete app packages I have ever come across. I would highly reccomend it to anyone!',
-          name: 'Sarah Hunt'
+          quote: 'Awesome. Period. Craze is the best. You should get it now!',
+          name: 'John Smith'
         },
         testimony3: {
-          quote: 'Craze is one of the most complete app packages I have ever come across. I would highly reccomend it to anyone!',
-          name: 'Sarah Hunt'
+          quote: 'I don\'t know what I would do without Craze. Seriously.',
+          name: 'Jane Smith'
         }
       }
     }

@@ -35,7 +35,7 @@ export default {
   text-align: left;
   display: flex;
   flex-direction: row;
-  flex-flow: row;
+  flex-flow: center;
 }
 
 .about {
