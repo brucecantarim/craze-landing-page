@@ -2,13 +2,13 @@
   .pricing
     h2 {{ title }}
     p {{ text }}
-    .list
+    .pricing-list
       .box(v-for="plan in plans")
         .header
           h2 {{ plan.name }}
         .content
+          h1 {{ plan.price.slice(0,3) }} #[small {{ plan.price.slice(4,6) }} ]
           ul
-            h1 {{ plan.price.slice(0,3) }} #[small {{ plan.price.slice(4,6) }} ]
             li(v-for="feature in plan.features") 
               p {{ feature }}
         .footer
@@ -77,13 +77,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .pricing {
   background-color: gainsboro;
   box-sizing: border-box;
   padding: 10vh 20vw;
+  height: 64vh;
 }
-.list {
+.pricing-list {
+  box-sizing: border-box;
+  padding: 0 -20vw;
   display: flex;
   flex-direction: row;
   flex-flow: center;
@@ -103,6 +106,9 @@ export default {
   padding: 0.5rem;
   margin: 0;
 }
+.content {
+  background-color: white;
+}
 .footer {
   padding: 0.5rem;
   margin: 0;
@@ -115,10 +121,10 @@ a {
   text-decoration: none;
 }
 ul {
-  background-color: white;
   list-style-position: outside;
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 li {
   width: 80%;
@@ -128,7 +134,7 @@ li {
 h1 {
   font-family: Novecentos, sans-serif;
   font-size: 2.5rem;
-  margin: 0.2rem;
+  margin: 0;
 }
 h1 small {
   font-size: 1.4rem;
