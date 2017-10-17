@@ -89,14 +89,18 @@ export default {
   padding: 0 -20vw;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-flow: center;
 }
 .box {
   width: 100%;
-  margin: 0 0.1rem;
+  margin: 25px 0.1rem;
   display: flex;
   flex-direction: column;
   flex-flow: center;
+}
+.box:nth-child(3n) {
+  margin: 0 0.1rem 25px 0.1rem;
 }
 .header, .footer {
   background-color: #3498db;
@@ -139,5 +143,23 @@ h1 {
 h1 small {
   font-size: 1.4rem;
   vertical-align: top;
+}
+.button {
+  cursor: pointer;
+  background-color: #0d74b9;
+  max-width: 65%;
+  min-height: 2.5rem;
+  margin: 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  flex-flow: center;
+  justify-content: center;
+}
+.button:hover{
+  background-color: rgba(0,200,255,1);
+}
+h4 {
+  margin: 0 auto;
+  line-height: 0;
 }
 </style>

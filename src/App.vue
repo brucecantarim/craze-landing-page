@@ -5,6 +5,7 @@
     showcase
     testimonials
     pricing
+    social
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import Features from './components/Features'
 import Showcase from './components/Showcase'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
+import Social from './components/Social'
 
 export default {
   name: 'app',
@@ -21,7 +23,8 @@ export default {
     Features,
     Showcase,
     Testimonials,
-    Pricing
+    Pricing,
+    Social
   }
 }
 </script>

@@ -4,7 +4,7 @@
     p {{ placeholder }}
     ul
       li(v-for="feature in features")
-        img(:src='feature.image') 
+        img(:src="feature.image") 
         h3 {{ feature.title }}
         p {{ placeholder.slice(0,59) + '.' }}
 </template>
