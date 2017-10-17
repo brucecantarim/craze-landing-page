@@ -59,5 +59,29 @@ li {
   width: 15vw;
   padding: 2rem;
   display: inline-block;
+  position: relative
 }
+
+li:nth-child(2):after, li:nth-child(3):after, li:nth-child(5):after, li:nth-child(6):after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-63%, -50%);
+  border-left: 1px solid gainsboro;
+}
+
+li:nth-child(4):after, li:nth-child(5):before, li:nth-child(6):before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -63%);
+  border-top: 1px solid gainsboro;
+}
+
 </style>

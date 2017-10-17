@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .social{
-  padding-top: 15vh;
+  padding-top: 10vh;
   padding-bottom: 5vh;
 }
 .icon-box {

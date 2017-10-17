@@ -7,7 +7,8 @@
         .header
           h2 {{ plan.name }}
         .content
-          h1 {{ plan.price.slice(0,3) }} #[small {{ plan.price.slice(4,6) }} ]
+          .price
+            h1 {{ plan.price.slice(0,3) }} #[small {{ plan.price.slice(4,6) }} ]
           ul
             li(v-for="feature in plan.features") 
               p {{ feature }}
@@ -30,45 +31,45 @@ export default {
           name: 'Basic',
           price: '$19,99',
           features: {
-            feature1: 'Lorem Ipsum',
-            feature2: 'Lorem Ipsum',
-            feature3: 'Lorem Ipsum',
-            feature4: 'Lorem Ipsum',
-            feature5: 'Lorem Ipsum'
+            feature1: 'Feature 1',
+            feature2: 'Feature 2',
+            feature3: 'Feature 3',
+            feature4: 'Feature 4',
+            feature5: 'Feature 5'
           }
         },
         standart: {
           name: 'Standart',
           price: '$39,99',
           features: {
-            feature1: 'Lorem Ipsum',
-            feature2: 'Lorem Ipsum',
-            feature3: 'Lorem Ipsum',
-            feature4: 'Lorem Ipsum',
-            feature5: 'Lorem Ipsum'
+            feature1: 'Feature 1',
+            feature2: 'Feature 2',
+            feature3: 'Feature 3',
+            feature4: 'Feature 4',
+            feature5: 'Feature 5'
           }
         },
         deluxe: {
           name: 'Deluxe',
           price: '$59,99',
           features: {
-            feature1: 'Lorem Ipsum',
-            feature2: 'Lorem Ipsum',
-            feature3: 'Lorem Ipsum',
-            feature4: 'Lorem Ipsum',
-            feature5: 'Lorem Ipsum',
-            feature6: 'Lorem Ipsum'
+            feature1: 'Feature 1',
+            feature2: 'Feature 2',
+            feature3: 'Feature 3',
+            feature4: 'Feature 4',
+            feature5: 'Feature 5',
+            feature6: 'Feature 6'
           }
         },
         unlimited: {
           name: 'Unlimited',
           price: '$79,99',
           features: {
-            feature1: 'Lorem Ipsum',
-            feature2: 'Lorem Ipsum',
-            feature3: 'Lorem Ipsum',
-            feature4: 'Lorem Ipsum',
-            feature5: 'Lorem Ipsum'
+            feature1: 'Feature 1',
+            feature2: 'Feature 2',
+            feature3: 'Feature 3',
+            feature4: 'Feature 4',
+            feature5: 'Feature 5'
           }
         }
       }
@@ -82,7 +83,7 @@ export default {
   background-color: gainsboro;
   box-sizing: border-box;
   padding: 10vh 20vw;
-  height: 64vh;
+  height: 70vh;
 }
 .pricing-list {
   box-sizing: border-box;
@@ -135,6 +136,11 @@ li {
   margin: 0 auto;
   border-top: 1px solid #848484;
 }
+.price {
+  height: 4rem;
+  padding: 0.5rem 0;
+}
+
 h1 {
   font-family: Novecentos, sans-serif;
   font-size: 2.5rem;
@@ -142,7 +148,8 @@ h1 {
 }
 h1 small {
   font-size: 1.4rem;
-  vertical-align: top;
+  vertical-align: 35%;
+  margin: -0.5rem;
 }
 .button {
   cursor: pointer;
