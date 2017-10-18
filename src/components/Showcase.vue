@@ -56,4 +56,18 @@ video {
   border-radius: 10px;
   margin-top: 1rem;
 }
+
+/* ----------- Tablets ----------- */
+@media screen 
+  and (max-device-width: 768px)
+  and (orientation: portrait) {
+    
+}
+
+/* ----------- Smartphones ----------- */
+@media screen 
+  and (max-device-width: 600px),
+  handheld and (orientation: landscape) {
+    
+}
 </style>

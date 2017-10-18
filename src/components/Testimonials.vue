@@ -69,4 +69,18 @@ export default {
 }.VueCarousel-dot-inner .VueCarousel-dot--active {
   background-color: #3498db;
 }
+
+/* ----------- Tablets ----------- */
+@media screen 
+  and (max-device-width: 768px)
+  and (orientation: portrait) {
+    
+}
+
+/* ----------- Smartphones ----------- */
+@media screen 
+  and (max-device-width: 600px),
+  handheld and (orientation: landscape) {
+    
+}
 </style>
