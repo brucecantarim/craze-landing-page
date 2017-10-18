@@ -85,6 +85,7 @@ export default {
   padding: 10vh 20vw;
   height: 70vh;
 }
+
 .pricing-list {
   box-sizing: border-box;
   padding: 0 -20vw;
@@ -93,49 +94,54 @@ export default {
   justify-content: center;
   flex-flow: center;
 }
+
 .box {
   width: 100%;
   margin: 25px 0.1rem;
   display: flex;
   flex-direction: column;
   flex-flow: center;
-}
-.box:nth-child(3n) {
+}.box:nth-child(3n) {
   margin: 0 0.1rem 25px 0.1rem;
 }
+
 .header, .footer {
   background-color: #3498db;
-}
-.header h2 {
+}.header h2 {
   color: white;
   padding: 0.5rem;
   margin: 0;
 }
+
 .content {
   background-color: white;
 }
+
 .footer {
   padding: 0.5rem;
   margin: 0;
-}
-.footer h4 {
+}.footer h4 {
   color: white;
   text-transform: uppercase;
 }
+
 a {
   text-decoration: none;
 }
+
 ul {
   list-style-position: outside;
   padding: 0;
   margin: 0;
   height: 100%;
-}
+} 
+
 li {
   width: 80%;
   margin: 0 auto;
   border-top: 1px solid #848484;
 }
+
 .price {
   height: 4rem;
   padding: 0.5rem 0;
@@ -145,12 +151,12 @@ h1 {
   font-family: Novecentos, sans-serif;
   font-size: 2.5rem;
   margin: 0;
-}
-h1 small {
+} h1 small {
   font-size: 1.4rem;
   vertical-align: 35%;
   margin: -0.5rem;
 }
+
 .button {
   cursor: pointer;
   background-color: #0d74b9;
@@ -161,10 +167,10 @@ h1 small {
   flex-direction: column;
   flex-flow: center;
   justify-content: center;
+} a .button:hover{
+  background-color: rgba(100,200,255,1);
 }
-.button:hover{
-  background-color: rgba(0,200,255,1);
-}
+
 h4 {
   margin: 0 auto;
   line-height: 0;

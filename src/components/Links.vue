@@ -55,8 +55,7 @@ a {
   font-size: 0.8rem;
   color: gray;
   text-decoration: none;
-}
-a:hover {
+} a:hover {
   text-decoration: underline;
 }
 </style>

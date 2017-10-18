@@ -4,10 +4,10 @@
     :autoplayTimeout=4000
     :loop="true"
     :perPage=1
+    :paginationPadding=0
+    :paginationSize=12
     paginationColor="#FFFFFF"
     paginationActiveColor="#3498db"
-    paginationPadding=0
-    paginationSize=12
     )
     slide.testimony(v-for="testimony in testimonials" :key="testimony.name")
       p {{ testimony.quote }}
@@ -47,22 +47,16 @@ export default {
 <style>
 .testimonials {
   padding: 5vh 0 8vh 0;
-}
-
-.testimonials p {
+}.testimonials p {
   font-size: 1.2rem;
   font-style: italic;
 }
 
 .testimony {
   width: 100%;
-}
-
-.testimony p:before { 
+}.testimony p:before { 
   content: open-quote; 
-}
-
-.testimony p:after { 
+}.testimony p:after { 
   content: close-quote; 
 }
 
@@ -72,11 +66,7 @@ export default {
   height: 12px;
   border-radius: 50%;
   border: 2px solid #3498db;
-}
-
-.VueCarousel-dot-inner .VueCarousel-dot--active {
+}.VueCarousel-dot-inner .VueCarousel-dot--active {
   background-color: #3498db;
 }
-
-
 </style>

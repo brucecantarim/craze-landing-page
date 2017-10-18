@@ -57,6 +57,7 @@ export default {
   padding-top: 10vh;
   padding-bottom: 5vh;
 }
+
 .icon-box {
   display: inline-block;
   padding: 1px;
@@ -64,8 +65,7 @@ export default {
   width: 30px;
   height: 30px;
   filter: grayscale(1) opacity(0.5);
-}
-.icon-box:hover {
+}.icon-box:hover {
   filter: grayscale(0) opacity(1);
 }
 </style>

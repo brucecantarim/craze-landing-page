@@ -3,6 +3,10 @@
     img(src="../assets/iphone.png")
     h1 {{ title }}
     h2 {{ slogan }}
+    .store-icons
+      .icon-box(v-for="store in stores")
+        a(:href="store.link")
+          img(:src="store.icon")
 </template>
 
 <script>
@@ -11,14 +15,31 @@ export default {
   data () {
     return {
       title: 'Craze',
-      slogan: 'A great new psd theme to showcase your new app.'
+      slogan: 'A great new psd theme to showcase your new app.',
+      stores: {
+        apple: {
+          name: 'Apple Store',
+          icon: require('../assets/apple.svg'),
+          link: 'http://itunes.apple.com'
+        },
+        android: {
+          name: 'Google Play Store',
+          icon: require('../assets/android.svg'),
+          link: 'http://play.google.com'
+        },
+        windows: {
+          name: 'Windows Store',
+          icon: require('../assets/windows.svg'),
+          link: 'http://store.windows.com'
+        }
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-div {
+.hero {
   box-sizing: border-box;
   background-color: blue;
   background-image: url('../assets/pattern.png');
@@ -49,7 +70,24 @@ a {
   color: #42b983;
 }
 
-img {
+.hero img {
   float: right;
+}
+
+.icon-box {
+  display: inline-block;
+  padding: 5px;
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  filter: grayscale(1) opacity(0.5);
+}.icon-box:hover {
+  filter: grayscale(0) opacity(1);
+}.icon-box img {
+  margin-top: 20%;
+  width: 100%;
+  height: 60%;
 }
 </style>
