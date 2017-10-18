@@ -6,7 +6,7 @@
       li(v-for="feature in features")
         img(:src="feature.image") 
         h3 {{ feature.title }}
-        p {{ placeholder.slice(0,59) + '.' }}
+        p {{ placeholder.slice(0,55) + '.' }}
 </template>
 
 <script>
@@ -54,9 +54,14 @@ export default {
   padding: 10vh 20vw;
 }
 
+ul {
+      list-style-position: outside;
+      padding: 0;
+}
+
 li {
   box-sizing: border-box;
-  width: 15vw;
+  width: 16vw;
   padding: 2rem;
   display: inline-block;
   position: relative
@@ -80,23 +85,27 @@ li {
   border-top: 1px solid gainsboro;
 }
 
-/* ----------- Tablets ----------- */
+/* ----------- Tablets & Laptops ----------- */
 @media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
+  and (max-device-width: 1240px) {
+    .features {
+      padding: 10vh 10vw;
+    }
+    li {
+      box-sizing: border-box;
+      width: 25vw;
+    }
 }
 
 /* ----------- Smartphones ----------- */
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
+    .features {
+      padding: 10vh 20vw;
+    }
     p{
       margin-bottom: 4rem;
-    }
-    ul {
-      list-style-position: outside;
-      padding: 0;
     }
     li {
       display: block;

@@ -46,7 +46,7 @@ export default {
 
 p {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   color: #848484;
 }

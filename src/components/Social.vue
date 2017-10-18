@@ -80,6 +80,12 @@ export default {
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
-    
+    .social {
+      padding: 5vh 5vw;
+    }
+    .icon-box {
+      width: 100px;
+      height: 100px;
+    }
 }
 </style>

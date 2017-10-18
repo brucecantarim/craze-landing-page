@@ -70,7 +70,12 @@ a {
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
-    
+    .links{
+      padding: 3vh 5vw;
+    }
+    li{
+      margin: 0.4rem;
+    }
 }
 </style>
 

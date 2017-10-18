@@ -82,8 +82,7 @@ export default {
 .pricing {
   background-color: gainsboro;
   box-sizing: border-box;
-  padding: 10vh 20vw;
-  height: 70vh;
+  padding: 5vh 20vw 0 20vw;
 }
 
 .pricing-list {
@@ -93,6 +92,9 @@ export default {
   flex-direction: row;
   justify-content: center;
   flex-flow: center;
+  margin: -5vh auto 0 auto;
+  position: relative;
+  top: 10vh;
 }
 
 .box {
@@ -176,17 +178,27 @@ h4 {
   line-height: 0;
 }
 
-/* ----------- Tablets ----------- */
+/* ----------- Tablets & Laptops ----------- */
 @media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
+  and (max-device-width: 1440px){
+  .pricing {
+    padding: 10vh 10vw;
+  }
 }
 
 /* ----------- Smartphones ----------- */
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
-    
+  .pricing {
+    padding: 10vh 20vw;
+  }
+  .pricing-list {
+    flex-direction: column;
+    margin: 0 auto 5vh auto;
+  }
+  .button {
+    min-height: 3rem;
+  }
 }
 </style>

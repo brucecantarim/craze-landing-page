@@ -97,20 +97,21 @@ a {
 
 /* ----------- Tablets ----------- */
 @media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
+  and (max-device-width: 768px) {
     .hero {
       height: 60vh;
     }
     .iphone {
       right: 0;
+      max-height: 100%;
     } 
 }
 
 /* ----------- Smartphones ----------- */
 @media screen 
   and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
+  handheld and (orientation: landscape)
+  and (orientation: portrait) {
     .hero {
       height: 100vh;
     }
