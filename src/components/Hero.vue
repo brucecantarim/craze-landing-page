@@ -1,6 +1,6 @@
 <template lang="pug">
   .hero
-    img(src="../assets/iphone.png")
+    img.iphone(src="../assets/iphone.png")
     h1 {{ title }}
     h2 {{ slogan }}
     .store-icons
@@ -48,6 +48,7 @@ export default {
   padding: 10vh 20vw;
   text-align: left;
   overflow: hidden;
+  position: relative;
 }
 
 h1 {
@@ -58,6 +59,7 @@ h1 {
 
 h2 {
   font-weight: normal;
+  max-width: 45%;
 }
 
 h1,
@@ -70,8 +72,11 @@ a {
   color: #42b983;
 }
 
-.hero img {
+.iphone {
   float: right;
+  position: absolute;
+  bottom: 0;
+  right: 20vw;
 }
 
 .icon-box {
