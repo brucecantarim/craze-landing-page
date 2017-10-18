@@ -57,17 +57,27 @@ video {
   margin-top: 1rem;
 }
 
-/* ----------- Tablets ----------- */
+/* ----------- Tablets & Laptops ----------- */
 @media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
+  and (max-device-width: 1240px) {
+    .showcase {
+      flex-direction: column;
+    }
+    .about{
+      padding: 0;
+    }
+    video {
+      width: 100%;
+    }
 }
 
 /* ----------- Smartphones ----------- */
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
-    
+    video {
+      width: 150%;
+      margin-left: -25%;
+    }
 }
 </style>

@@ -92,5 +92,9 @@ body {
       font-size: 34px;
       overflow-x: hidden;
     }
+    
+    p{
+      font-size: 1rem;
+    }
 }
 </style>

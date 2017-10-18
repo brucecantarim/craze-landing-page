@@ -50,11 +50,11 @@ export default {
 }.testimonials p {
   font-size: 1.2rem;
   font-style: italic;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.testimony {
-  width: 100%;
-}.testimony p:before { 
+.testimony p:before { 
   content: open-quote; 
 }.testimony p:after { 
   content: close-quote; 
@@ -81,6 +81,11 @@ export default {
 @media screen 
   and (max-device-width: 600px),
   handheld and (orientation: landscape) {
-    
+    .VueCarousel-dot-inner, .VueCarousel-dot-inner .VueCarousel-dot--active {
+      margin: 0 0.2rem;
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 50%;
+    }
 }
 </style>
