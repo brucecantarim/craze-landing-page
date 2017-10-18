@@ -1,5 +1,12 @@
 # craze-landing-page
 
+This was a coding challenge that involved creating a landing page from a provided free psd template.
+It's adapted to mobile devices as well, and content can be easily substitute by a json file fetch.
+
+Estimated total time of development: 20 hours.
+
+You can check a live demo [here](http://crazepsdtheme.surge.sh/).
+
 > Vue.js Landing Page Project
 
 ## Build Setup
