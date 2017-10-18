@@ -1,17 +1,28 @@
 <template lang="pug">
-  .testimonials
-    .testimony(v-for="testimony in testimonials")
+  carousel.testimonials(
+    :autoplay="true" 
+    :autoplayTimeout=4000
+    :loop="true"
+    :perPage=1
+    paginationColor="#FFFFFF"
+    paginationActiveColor="#3498db"
+    paginationPadding=0
+    paginationSize=12
+    )
+    slide.testimony(v-for="testimony in testimonials" :key="testimony.name")
       p {{ testimony.quote }}
       h5 {{ testimony.name }}
-    .dots
-      .dot-active
-      .dot
-      .dot
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel'
+
 export default {
   name: 'Testimonials',
+  components: {
+    Carousel,
+    Slide
+  },
   data () {
     return {
       testimonials: {
@@ -33,37 +44,29 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .testimonials {
-  padding: 5vh 24vw;
+  padding: 5vh 0 8vh 0;
 }
-p {
+
+.testimonials p {
   font-size: 1.2rem;
   font-style: italic;
 }
 
-p:before { 
+.testimony {
+  width: 100%;
+}
+
+.testimony p:before { 
   content: open-quote; 
 }
 
-p:after { 
+.testimony p:after { 
   content: close-quote; 
 }
 
-.testimony {
-  display: none;
-}
-
-.testimony:first-of-type {
-  display: block;
-}
-
-.dots {
-  margin: 1rem auto;
-}
-
-.dot, .dot-active {
-  display: inline-block;
+.VueCarousel-dot-inner, .VueCarousel-dot-inner .VueCarousel-dot--active {
   margin: 0 0.2rem;
   width: 12px;
   height: 12px;
@@ -71,8 +74,9 @@ p:after {
   border: 2px solid #3498db;
 }
 
-.dot-active {
+.VueCarousel-dot-inner .VueCarousel-dot--active {
   background-color: #3498db;
 }
+
 
 </style>

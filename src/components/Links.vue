@@ -13,7 +13,7 @@ export default {
       links: {
         contact: {
           name: 'Contact',
-          url: 'mailto:contact@craze.com'
+          url: 'mailto:bruce@cantarim.com'
         },
         download: {
           name: 'Download',
@@ -25,7 +25,7 @@ export default {
         },
         mail: {
           name: 'Mail',
-          url: 'mailto:craze@craze.com'
+          url: 'mailto:bruce@cantarim.com'
         },
         support: {
           name: 'Support',
