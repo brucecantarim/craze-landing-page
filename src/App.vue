@@ -76,4 +76,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+
+/* ----------- Tablets ----------- */
+@media screen 
+  and (max-device-width: 768px)
+  and (orientation: portrait) {
+    
+}
+
+/* ----------- Smartphones ----------- */
+@media screen 
+  and (max-device-width: 600px),
+  handheld and (orientation: landscape) {
+    html {
+      font-size: 34px;
+      overflow-x: hidden;
+    }
+}
 </style>

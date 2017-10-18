@@ -1,12 +1,12 @@
 <template lang="pug">
   .hero
-    img.iphone(src="../assets/iphone.png")
     h1 {{ title }}
     h2 {{ slogan }}
     .store-icons
       .icon-box(v-for="store in stores")
         a(:href="store.link")
           img(:src="store.icon")
+    img.iphone(src="../assets/iphone.png")
 </template>
 
 <script>
@@ -73,10 +73,9 @@ a {
 }
 
 .iphone {
-  float: right;
   position: absolute;
   bottom: 0;
-  right: 20vw;
+  right: 20vw;  
 }
 
 .icon-box {
@@ -94,5 +93,43 @@ a {
   margin-top: 20%;
   width: 100%;
   height: 60%;
+}
+
+/* ----------- Tablets ----------- */
+@media screen 
+  and (max-device-width: 768px)
+  and (orientation: portrait) {
+    .hero {
+      height: 60vh;
+    }
+    .iphone {
+      right: 0;
+    } 
+}
+
+/* ----------- Smartphones ----------- */
+@media screen 
+  and (max-device-width: 600px),
+  handheld and (orientation: landscape) {
+    .hero {
+      height: 100vh;
+    }
+    h2 {
+      max-width: 100%;
+    }
+    .iphone {
+      position: absolute;
+      bottom: 0;
+      right: 10vw;
+      width: 60%;
+    } 
+    .store-icons{
+      margin: 5vh auto;
+      text-align: center;
+    }
+    .icon-box {
+      width: 120px;
+      height: 120px;
+    }
 }
 </style>
