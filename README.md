@@ -1,3 +1,5 @@
+![Craze Landing Page Screenshot](screenshot.png)
+
 # craze-landing-page
 
 This was a coding challenge that involved creating a landing page from a provided free psd template.
