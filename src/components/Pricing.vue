@@ -1,20 +1,21 @@
 <template lang="pug">
   .pricing
-    h2 {{ title }}
-    p {{ text }}
-    .pricing-list
-      .box(v-for="plan in plans")
-        .header
+    .pricing__description
+      h2 {{ title }}
+      p {{ text }}
+    .pricing__list
+      .card(v-for="plan in plans")
+        .card__header
           h2 {{ plan.name }}
-        .content
-          .price
+        .card__content
+          .card__price
             h1 {{ plan.price.slice(0,3) }} #[small {{ plan.price.slice(4,6) }} ]
-          ul
-            li(v-for="feature in plan.features") 
+          ul.card__list
+            li.card__item(v-for="feature in plan.features") 
               p {{ feature }}
-        .footer
+        .card__footer
           a(href="#")
-            .button
+            .card__button
               h4 {{ action }}
 </template>
 
@@ -77,128 +78,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.pricing {
-  background-color: gainsboro;
-  box-sizing: border-box;
-  padding: 5vh 20vw 0 20vw;
-}
-
-.pricing-list {
-  box-sizing: border-box;
-  padding: 0 -20vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-flow: center;
-  margin: -5vh auto 0 auto;
-  position: relative;
-  top: 10vh;
-}
-
-.box {
-  width: 100%;
-  margin: 25px 0.1rem;
-  display: flex;
-  flex-direction: column;
-  flex-flow: center;
-}.box:nth-child(3n) {
-  margin: 0 0.1rem 25px 0.1rem;
-}
-
-.header, .footer {
-  background-color: #3498db;
-}.header h2 {
-  color: white;
-  padding: 0.5rem;
-  margin: 0;
-}
-
-.content {
-  background-color: white;
-}
-
-.footer {
-  padding: 0.5rem;
-  margin: 0;
-}.footer h4 {
-  color: white;
-  text-transform: uppercase;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style-position: outside;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-} 
-
-li {
-  width: 80%;
-  margin: 0 auto;
-  border-top: 1px solid #848484;
-}
-
-.price {
-  height: 4rem;
-  padding: 0.5rem 0;
-}
-
-h1 {
-  font-family: Novecentos, sans-serif;
-  font-size: 2.5rem;
-  margin: 0;
-} h1 small {
-  font-size: 1.4rem;
-  vertical-align: 35%;
-  margin: -0.5rem;
-}
-
-.button {
-  cursor: pointer;
-  background-color: #0d74b9;
-  max-width: 65%;
-  min-height: 2.5rem;
-  margin: 0.5rem auto;
-  display: flex;
-  flex-direction: column;
-  flex-flow: center;
-  justify-content: center;
-} a .button:hover{
-  background-color: rgba(100,200,255,1);
-}
-
-h4 {
-  margin: 0 auto;
-  line-height: 0;
-}
-
-/* ----------- Tablets & Laptops ----------- */
-@media screen 
-  and (max-device-width: 1440px){
-  .pricing {
-    padding: 10vh 10vw;
-  }
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-  .pricing {
-    padding: 10vh 20vw;
-  }
-  .pricing-list {
-    flex-direction: column;
-    margin: 0 auto 5vh auto;
-  }
-  .button {
-    min-height: 3rem;
-  }
-}
-</style>

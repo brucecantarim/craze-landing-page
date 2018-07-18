@@ -1,9 +1,10 @@
 <template lang="pug">
 .social
-  h2 {{ title }}
-  p {{ text }}
-  .social-icons
-    .icon-box(v-for="network in networks")
+  .social__description
+    h2 {{ title }}
+    p {{ text }}
+  .social__list
+    .social__icon(v-for="network in networks")
       a(:href="network.link")
         img(:src="network.icon")
 </template>
@@ -51,41 +52,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.social{
-  padding-top: 10vh;
-  padding-bottom: 5vh;
-}
-
-.icon-box {
-  display: inline-block;
-  padding: 1px;
-  margin: 0.5rem;
-  width: 30px;
-  height: 30px;
-  filter: grayscale(1) opacity(0.5);
-}.icon-box:hover {
-  filter: grayscale(0) opacity(1);
-}
-
-/* ----------- Tablets ----------- */
-@media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-    .social {
-      padding: 5vh 5vw;
-    }
-    .icon-box {
-      width: 100px;
-      height: 100px;
-    }
-}
-</style>

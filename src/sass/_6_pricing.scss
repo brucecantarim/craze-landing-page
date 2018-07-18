@@ -1,0 +1,111 @@
+.pricing {
+  background-color: $secondary-bg-color;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  &__description {
+    padding-top: 2rem;
+  }
+  &__list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-flow: center;
+    margin: -5vh auto 0 auto;
+    position: relative;
+    top: 3rem;
+  }
+  .card {
+    width: 100%;
+    margin: 1rem 0.1rem;
+    display: flex;
+    flex-direction: column;
+    flex-flow: center;
+    &__header {
+      background-color: $light-featured-color;
+      h2 {
+        color: $display-color;
+        padding: 0.5rem;
+        margin: 0;
+      }
+    }
+    &__content {
+      background-color: $main-bg-color;
+    }
+    &__footer {
+      background-color: $light-featured-color;
+      padding: 0.5rem;
+      margin: 0;
+      h4 {
+        color: $display-color;
+        text-transform: uppercase;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    &__list {
+      list-style-position: outside;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+    }
+    &__item {
+      width: 80%;
+      margin: 0 auto;
+      border-top: 1px solid $content-color;
+    }
+    &__price {
+      height: 4rem;
+      padding-top: 0.5rem;
+      h1 {
+        font-family: Novecentos, sans-serif;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      h1 small {
+        font-size: 1.4rem;
+        vertical-align: 35%;
+        margin: -0.5rem;
+      }
+    }
+    &__button {
+      cursor: pointer;
+      background-color: $dark-featured-color;
+      max-width: 65%;
+      min-height: 3rem;
+      margin: 0.5rem auto;
+      display: flex;
+      flex-direction: column;
+      flex-flow: center;
+      justify-content: center;
+      &:hover {
+        background-color: $hover-featured-color;
+      }
+    }
+    h4 {
+      margin: 0 auto;
+      line-height: 0;
+    }
+  }
+  @media screen and (orientation: landscape) {
+    &__description {
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+    &__list {
+      max-width: 70rem;
+      flex-direction: row;
+      margin: -5vh auto 0 auto;
+      top: 6.5rem;
+    }
+    .card {
+      &:nth-child(3n) {
+        margin: 0 0.1rem 25px 0.1rem;
+      }
+      &__button {
+        min-height: 2.5rem;
+      }
+    }
+  }
+}

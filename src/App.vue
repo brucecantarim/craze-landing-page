@@ -32,69 +32,7 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-@font-face {
-  font-family: Novecentos;
-  src: url('./assets/novecentos.woff2') format('woff2'),
-  url('./assets/novecentos.woff') format('woff');
-}
-
-* {
-  box-sizing: border-box;
-}
-
-p {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: #848484;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
-  color: #222222;
-}
-
-li {
-  list-style-type: none;
-}
-
-body {
-  margin: 0;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-
-/* ----------- Tablets ----------- */
-@media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-    html {
-      font-size: 34px;
-      overflow-x: hidden;
-    }
-    
-    p{
-      font-size: 1rem;
-    }
-}
+<style lang="scss">
+// Here we import the main Sass file, with the styles that will be applied all over the app
+@import './sass/style.scss';
 </style>

@@ -1,7 +1,7 @@
 <template lang="pug">
 .links
-  ul
-    li(v-for="link in links")
+  ul.links__list
+    li.links__item(v-for="link in links")
       a(:href="link.url") {{ link.name }}
 </template>
 
@@ -40,42 +40,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.links {
-  background-color: gainsboro;
-  padding: 3vh 20vw;
-}
-li {
-  display: inline;
-  margin: 1rem;
-}
-a {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
-  color: gray;
-  text-decoration: none;
-} a:hover {
-  text-decoration: underline;
-}
-
-/* ----------- Tablets ----------- */
-@media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-    .links{
-      padding: 3vh 5vw;
-    }
-    li{
-      margin: 0.4rem;
-    }
-}
-</style>
-

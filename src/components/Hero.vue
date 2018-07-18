@@ -1,12 +1,13 @@
 <template lang="pug">
   .hero
-    h1 {{ title }}
-    h2 {{ slogan }}
-    .store-icons
-      .icon-box(v-for="store in stores")
-        a(:href="store.link")
-          img(:src="store.icon")
-    img.iphone(src="../assets/iphone.png")
+    .hero__content
+      h1 {{ title }}
+      h2 {{ slogan }}
+      .hero__stores
+        .hero__store-icon(v-for="store in stores")
+          a(:href="store.link")
+            img(:src="store.icon")
+    .hero__mockup
 </template>
 
 <script>
@@ -37,100 +38,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.hero {
-  box-sizing: border-box;
-  background-color: blue;
-  background-image: url('../assets/pattern.png');
-  height: 60vh;
-  width: 100vw;
-  padding: 10vh 20vw;
-  text-align: left;
-  overflow: hidden;
-  position: relative;
-}
-
-h1 {
-  font-family: Pacifico, cursive;
-  font-weight: bold;
-  font-size: 4rem;
-}
-
-h2 {
-  font-weight: normal;
-  max-width: 45%;
-}
-
-h1,
-h2 {
-  color: white;
-  text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.2);
-}
-
-a {
-  color: #42b983;
-}
-
-.iphone {
-  position: absolute;
-  bottom: 0;
-  right: 20vw;  
-}
-
-.icon-box {
-  display: inline-block;
-  padding: 5px;
-  margin-right: 0.5rem;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 50%;
-  filter: grayscale(1) opacity(0.5);
-}.icon-box:hover {
-  filter: grayscale(0) opacity(1);
-}.icon-box img {
-  margin-top: 20%;
-  width: 100%;
-  height: 60%;
-}
-
-/* ----------- Tablets ----------- */
-@media screen 
-  and (max-device-width: 768px) {
-    .hero {
-      height: 60vh;
-    }
-    .iphone {
-      right: 0;
-      max-height: 100%;
-    } 
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape)
-  and (orientation: portrait) {
-    .hero {
-      height: 100vh;
-    }
-    h2 {
-      max-width: 100%;
-    }
-    .iphone {
-      position: absolute;
-      bottom: 0;
-      right: 10vw;
-      width: 60%;
-    } 
-    .store-icons{
-      margin: 5vh auto;
-      text-align: center;
-    }
-    .icon-box {
-      width: 120px;
-      height: 120px;
-    }
-}
-</style>

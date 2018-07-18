@@ -1,91 +1,80 @@
 <template lang="pug">
-  carousel.testimonials(
-    :autoplay="true" 
-    :autoplayTimeout=4000
-    :loop="true"
-    :perPage=1
-    :paginationPadding=0
-    :paginationSize=12
-    paginationColor="#FFFFFF"
-    paginationActiveColor="#3498db"
-    )
-    slide.testimony(v-for="testimony in testimonials" :key="testimony.name")
-      p {{ testimony.quote }}
-      h5 {{ testimony.name }}
+  div.testimonials
+    div.testimonials__item
+      p {{ currentSlide.quote }}
+      h5 {{ currentSlide.name }}
+    div.testimonials__counter
+      div.testimonials__dot(
+        v-for="(testimony, index) in testimonials"
+        :key="testimony.id"
+        :class="[(activeSlide == index) ? 'testimonials__dot--active' : '']"
+        @click="goToSlide(index);"
+      )
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
-
 export default {
   name: 'Testimonials',
-  components: {
-    Carousel,
-    Slide
-  },
   data () {
     return {
-      testimonials: {
-        testimony1: {
+      testimonials: [
+        {
+          id: 1,
           quote: 'Craze is one of the most complete app packages I have ever come across. I would highly reccomend it to anyone!',
           name: 'Sarah Hunt'
         },
-        testimony2: {
+        {
+          id: 2,
           quote: 'Awesome. Period. Craze is the best. You should get it now!',
           name: 'John Smith'
         },
-        testimony3: {
+        {
+          id: 3,
           quote: 'I don\'t know what I would do without Craze. Seriously.',
-          name: 'Jane Smith'
+          name: 'Jane Doe'
         }
+      ],
+      activeSlide: 0,
+      auto: true
+    }
+  },
+  mounted () {
+    // When the testimonials component is mounted, we start the slider
+    if (this.auto === true) {
+      this.autoInterval = setInterval(() => {
+        this.next()
+      }, 4000)
+    }
+  },
+  computed: {
+    // Here we define the function to get the current active slide
+    currentSlide () {
+      return this.testimonials[this.activeSlide]
+    }
+  },
+  methods: {
+    // Here we implement the function to get the next slide of the carousel
+    next () {
+      let active = this.activeSlide + 1
+      if (active >= this.testimonials.length) {
+        active = 0
       }
+      this.activateSlide(active)
+    },
+    // Here we define the function to activate a slide via argument
+    activateSlide (slideIndex) {
+      this.activeSlide = slideIndex
+    },
+    // Here we implement the function that disables the autoslider timer
+    disableAutoInterval () {
+      this.auto = false
+      clearInterval(this.autoInterval)
+    },
+    // And here we call both disableAutoInterval() and activateSlide() when the user interacts with the controls
+    goToSlide (slideIndex) {
+      this.disableAutoInterval()
+      this.activateSlide(slideIndex)
     }
   }
 }
 </script>
-
-<style>
-.testimonials {
-  padding: 5vh 0 8vh 0;
-}.testimonials p {
-  font-size: 1.2rem;
-  font-style: italic;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.testimony p:before { 
-  content: open-quote; 
-}.testimony p:after { 
-  content: close-quote; 
-}
-
-.VueCarousel-dot-inner, .VueCarousel-dot-inner .VueCarousel-dot--active {
-  margin: 0 0.2rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #3498db;
-}.VueCarousel-dot-inner .VueCarousel-dot--active {
-  background-color: #3498db;
-}
-
-/* ----------- Tablets ----------- */
-@media screen 
-  and (max-device-width: 768px)
-  and (orientation: portrait) {
-    
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-    .VueCarousel-dot-inner, .VueCarousel-dot-inner .VueCarousel-dot--active {
-      margin: 0 0.2rem;
-      width: 60px !important;
-      height: 60px !important;
-      border-radius: 50%;
-    }
-}
-</style>

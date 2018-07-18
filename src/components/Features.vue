@@ -1,12 +1,13 @@
 <template lang="pug">
   .features
-    h2 {{ title }}
-    p {{ placeholder }}
-    ul
-      li(v-for="feature in features")
+    .features__description
+      h2 {{ title }}
+      p {{ (description != '') ? description : placeholder }}
+    ul.features__list
+      li.features__item(v-for="feature in features")
         img(:src="feature.image") 
         h3 {{ feature.title }}
-        p {{ placeholder.slice(0,55) + '.' }}
+        p {{ (feature.description != '') ? feature.description : placeholder.slice(0,55) + '.' }}
 </template>
 
 <script>
@@ -15,29 +16,36 @@ export default {
   data () {
     return {
       title: 'Craze Features',
+      description: '',
       features: {
         feat1: {
           title: 'Flat Design',
+          description: '',
           image: require('../assets/icon-monitor.png')
         },
         feat2: {
           title: 'Marketable',
+          description: '',
           image: require('../assets/icon-target.png')
         },
         feat3: {
           title: 'Edit Photos',
+          description: '',
           image: require('../assets/icon-picture.png')
         },
         feat4: {
           title: 'Edit Colors',
+          description: '',
           image: require('../assets/icon-pallet.png')
         },
         feat5: {
           title: 'User Friendly',
+          description: '',
           image: require('../assets/icon-user.png')
         },
         feat6: {
           title: '100% Editable',
+          description: '',
           image: require('../assets/icon-gear.png')
         }
       },
@@ -46,84 +54,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.features {
-  box-sizing: border-box;
-  width: 100vw;
-  padding: 10vh 20vw;
-}
-
-ul {
-      list-style-position: outside;
-      padding: 0;
-}
-
-li {
-  box-sizing: border-box;
-  width: 16vw;
-  padding: 2rem;
-  display: inline-block;
-  position: relative
-} li:nth-child(2):after, li:nth-child(3):after, li:nth-child(5):after, li:nth-child(6):after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  transform: translate(-63%, -50%);
-  border-left: 1px solid gainsboro;
-} li:nth-child(4):after, li:nth-child(5):before, li:nth-child(6):before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  transform: translate(-50%, -63%);
-  border-top: 1px solid gainsboro;
-}
-
-/* ----------- Tablets & Laptops ----------- */
-@media screen 
-  and (max-device-width: 1240px) {
-    .features {
-      padding: 10vh 10vw;
-    }
-    li {
-      box-sizing: border-box;
-      width: 25vw;
-    }
-}
-
-/* ----------- Smartphones ----------- */
-@media screen 
-  and (max-device-width: 600px),
-  handheld and (orientation: landscape) {
-    .features {
-      padding: 10vh 20vw;
-    }
-    p{
-      margin-bottom: 4rem;
-    }
-    li {
-      display: block;
-      width: 100%;
-      margin: 0 auto;
-      padding: 2rem 0;
-      padding-bottom: 0;
-      border-bottom: 1px solid gainsboro;
-    } li:first-child {
-      border-top: 1px solid gainsboro;
-    } li:nth-child(2):after, li:nth-child(3):after, li:nth-child(5):after, li:nth-child(6):after {
-      border-left: none;
-    } li:nth-child(4):after, li:nth-child(5):before, li:nth-child(6):before {
-      border-top: none;
-    } li img {
-      width: 160px;
-      height: auto;
-      margin-top: 2rem;
-    }
-}
-</style>
