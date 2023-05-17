@@ -1,0 +1,55 @@
+.testimonials {
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  &__item {
+    min-height: 15rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 0 auto;
+      &:before {
+        content: open-quote;
+      }
+      &:after {
+        content: close-quote;
+      }
+    }
+  }
+  &__counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: flex-end;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__dot {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 0.2rem solid $light-featured-color;
+    &--active {
+      background-color: $light-featured-color;
+    }
+  }
+  @media screen and (orientation: landscape) {
+    &__item {
+      min-height: 8rem;
+    }
+    &__dot,
+    &__dot--active {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+}

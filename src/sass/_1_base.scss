@@ -1,0 +1,56 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Pacifico'); // Importing Pacifico from google fonts
+@font-face {
+  font-family: Novecentos; // Novecentos had to be add and served locally
+  src: url('./assets/novecentos.woff2') format('woff2'), url('./assets/novecentos.woff') format('woff');
+}
+
+// Setting some default configuration for the project
+html {
+  color: $content-color;
+  font-family: $content-font;
+  font-size: 5vw; // Here I defined this value mostly for mobile devices
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+  color: $title-color;
+}
+
+p {
+  line-height: 2.8ch; // This is to replicate the line spacing in the original design
+}
+
+li {
+  list-style-type: none;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+@media screen and (orientation: landscape) {
+  html {
+    font-size: 1.5vw; // Reducing font-size for all devices when in ladscape mode
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1200px) {
+  html {
+    font-size: 16px; // Setting the maximum font-size for desktops, this allows me to use rem better
+  }
+}
